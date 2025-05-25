@@ -69,12 +69,36 @@
     }
 
     .hero {
+      position: relative;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       padding: 4rem 2rem;
       gap: 2rem;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
     }
 
     .hero-left {
@@ -251,11 +275,15 @@
         <li><a href="#about">ABOUT US</a></li>
         <li><a href="#contact">CONTACT US</a></li>
         <li><a href="#clients">CLIENTS</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="skroll-vid.mp4" type="video/mp4">
+    </video>
     <div class="hero-left" data-aos="fade-right">
       <h1>Empowering SKs through Modern Web Solutions</h1>
       <p>SKroll Up is your partner in creating digital platforms that promote transparency and innovation.</p>
@@ -266,69 +294,24 @@
     </div>
   </section>
 
-  <section id="services" class="section" data-aos="fade-up">
-    <h2>What We Offer</h2>
-    <div class="grid">
+  <section id="portfolio" class="section" data-aos="fade-up">
+    <h2>Our Work</h2>
+    <div class="grid portfolio-gallery">
       <div class="portfolio-item">
-        <i class="fas fa-laptop-code fa-2x" style="color: var(--red); margin-bottom: 1rem;"></i>
-        <h3>Custom Website Development</h3>
-        <p>We build tailored websites that reflect your community's identity and needs—from landing pages to full portals.</p>
+        <img src="portfolio1.jpg" alt="Project 1">
+        <p>SK Santolan Portal - Transparency-focused community website with announcements, job board, and records system.</p>
       </div>
       <div class="portfolio-item">
-        <i class="fas fa-tools fa-2x" style="color: var(--red); margin-bottom: 1rem;"></i>
-        <h3>Website Maintenance</h3>
-        <p>Ongoing support and updates to keep your SK websites secure, up-to-date, and running smoothly.</p>
+        <img src="portfolio2.jpg" alt="Project 2">
+        <p>Upcoming Project - Web portal for SK-based resource sharing and real-time documentation upload.</p>
       </div>
       <div class="portfolio-item">
-        <i class="fas fa-comments fa-2x" style="color: var(--blue); margin-bottom: 1rem;"></i>
-        <h3>Consultation & Training</h3>
-        <p>We guide SK officials through the digital process with training sessions and planning consultations.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section" data-aos="fade-up">
-    <h2>Our Objectives</h2>
-    <div class="grid">
-      <div class="portfolio-item">
-        <h3>Transparency</h3>
-        <p>Empowering SKs to be more transparent with their projects and programs through proper documentation and online platforms.</p>
+        <img src="portfolio3.jpg" alt="Project 3">
+        <p>Small Business Website - A clean, minimal site designed for local entrepreneurs and SMEs to promote services.</p>
       </div>
       <div class="portfolio-item">
-        <h3>Digitization</h3>
-        <p>Modernizing systems and digitizing processes to make SK services more accessible and efficient.</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Collaboration</h3>
-        <p>Helping SKs collaborate with professionals and volunteers to improve project implementation and sustainability.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section" data-aos="fade-up">
-    <h2>Contact Us</h2>
-    <form action="mailto:skrollup@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="Email" placeholder="Your Email" required>
-      <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section id="clients" class="section" data-aos="fade-up">
-    <h2>Our Clients</h2>
-    <div class="grid">
-      <div class="portfolio-item">
-        <h3>SK Santolan</h3>
-        <p>Barangay Santolan's SK trusted us to digitize their systems and promote transparency through a fully functional portal.</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Client 2</h3>
-        <p>Coming soon...</p>
-      </div>
-      <div class="portfolio-item">
-        <h3>Client 3</h3>
-        <p>Coming soon...</p>
+        <img src="portfolio4.jpg" alt="Project 4">
+        <p>Digital Transparency Board - A dynamic announcement site tailored for posting updates and budget allocations for SK constituents.</p>
       </div>
     </div>
   </section>
