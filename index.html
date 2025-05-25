@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SKroll Up - Official Website</title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script src="https://kit.fontawesome.com/a2e0c6ad68.js" crossorigin="anonymous"></script>
   <style>
     :root {
@@ -156,7 +156,15 @@
       margin-top: 2rem;
     }
 
-    .card, .testimonial, .portfolio-item {
+    .portfolio-gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial, .portfolio-item {
       padding: 2rem;
       border: var(--border);
       border-radius: 1rem;
@@ -164,17 +172,9 @@
       background-color: #fff;
     }
 
-    .card:hover, .testimonial:hover, .portfolio-item:hover {
+    .testimonial:hover, .portfolio-item:hover {
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       transform: translateY(-5px);
-    }
-
-    .portfolio-gallery img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
     }
 
     form {
@@ -260,7 +260,6 @@
     </nav>
   </header>
 
-  <!-- HERO Section with split layout -->
   <section class="hero" data-aos="fade-up">
     <div class="hero-left">
       <h1>Empowering SKs through Modern Web Solutions</h1>
@@ -272,10 +271,48 @@
     </div>
   </section>
 
-  <!-- Continue with rest of your sections -->
-  <!-- You can paste the rest of the previous code from #services, #about, #clients, #portfolio, #testimonials, and #contact here -->
+  <section id="portfolio" class="section" data-aos="fade-up">
+    <h2>Our Portfolio</h2>
+    <div class="grid portfolio-gallery">
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <p>SK Barangay Website</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <p>Youth Hub System</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Scripts -->
+  <section id="testimonials" class="section" data-aos="fade-up">
+    <h2>Client Testimonials</h2>
+    <div class="grid">
+      <div class="testimonial">
+        <p>"SKroll Up provided us a platform we never thought possible. Our community is more connected than ever."</p>
+        <strong>- SK Chair, Barangay Santolan</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Professional, fast, and aligned with our goals. Highly recommend!"</p>
+        <strong>- SK Kagawad, Barangay San Miguel</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SKroll Up. All rights reserved.</p>
+  </footer>
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
