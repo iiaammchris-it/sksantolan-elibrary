@@ -70,38 +70,40 @@
 
     .hero {
       position: relative;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 4rem 2rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 4rem 2rem;
       gap: 2rem;
-      overflow: hidden;
-      z-index: 1;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(4px);
+      border-radius: 1rem;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: rgba(255, 255, 255, 0.85);
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .hero-left {
+    .hero-left, .hero-right {
       flex: 1 1 350px;
       min-width: 300px;
     }
@@ -130,12 +132,6 @@
     .hero-left a:hover {
       background-color: var(--red);
       color: #fff;
-    }
-
-    .hero-right {
-      flex: 1 1 350px;
-      min-width: 300px;
-      text-align: center;
     }
 
     .hero-right img {
@@ -251,7 +247,7 @@
         display: block;
       }
 
-      .hero {
+      .hero-content {
         flex-direction: column;
       }
 
@@ -281,16 +277,18 @@
   </header>
 
   <section class="hero">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline class="bg-video">
       <source src="skroll-vid.mp4" type="video/mp4">
     </video>
-    <div class="hero-left" data-aos="fade-right">
-      <h1>Empowering SKs through Modern Web Solutions</h1>
-      <p>SKroll Up is your partner in creating digital platforms that promote transparency and innovation.</p>
-      <a href="#contact">Contact Us</a>
-    </div>
-    <div class="hero-right" data-aos="fade-left">
-      <img src="SKroll Up - Transparent - Tag - Black.png" alt="SKroll Up">
+    <div class="hero-content">
+      <div class="hero-left" data-aos="fade-right">
+        <h1>Empowering SKs through Modern Web Solutions</h1>
+        <p>SKroll Up is your partner in creating digital platforms that promote transparency and innovation.</p>
+        <a href="#contact">Contact Us</a>
+      </div>
+      <div class="hero-right" data-aos="fade-left">
+        <img src="SKroll Up - Transparent - Tag - Black.png" alt="SKroll Up">
+      </div>
     </div>
   </section>
 
@@ -314,6 +312,16 @@
         <p>Digital Transparency Board - A dynamic announcement site tailored for posting updates and budget allocations for SK constituents.</p>
       </div>
     </div>
+  </section>
+
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
