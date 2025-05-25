@@ -8,11 +8,10 @@
   <script src="https://kit.fontawesome.com/a2e0c6ad68.js" crossorigin="anonymous"></script>
   <style>
     :root {
-      --red: #d62828;
-      --gold: #ffd700;
+      --red: #7b1818;
       --blue: #003f88;
       --white: #ffffff;
-      --border: 2px solid var(--gold);
+      --border: 2px solid var(--red);
     }
 
     * {
@@ -54,14 +53,13 @@
       text-decoration: none;
       color: #222;
       padding: 0.5rem 1rem;
-      border: var(--border);
-      border-radius: 50px;
+      border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
     }
 
     .nav-links a:hover {
-      background-color: var(--gold);
-      color: #000;
+      border-bottom: 2px solid var(--red);
+      color: var(--red);
     }
 
     .burger {
@@ -106,8 +104,8 @@
     }
 
     .hero-left a:hover {
-      background-color: var(--gold);
-      color: #000;
+      background-color: var(--red);
+      color: #fff;
     }
 
     .hero-right {
@@ -138,7 +136,7 @@
       content: '';
       width: 80px;
       height: 2px;
-      background-color: var(--gold);
+      background-color: var(--red);
       display: block;
       margin: 0.5rem auto;
     }
@@ -198,8 +196,8 @@
     }
 
     button:hover {
-      background-color: var(--gold);
-      color: #000;
+      background-color: var(--red);
+      color: #fff;
     }
 
     footer {
@@ -245,83 +243,55 @@
       <img src="SKroll Up - Transparent - Tag - Black.png" alt="SKroll Up Logo">
     </div>
     <nav>
+      <div class="burger" onclick="document.querySelector('.nav-links').classList.toggle('nav-active')">
+        <i class="fas fa-bars"></i>
+      </div>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+        <li><a href="#clients">CLIENTS</a></li>
       </ul>
-      <div class="burger"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
 
-  <section class="hero" data-aos="fade-up">
-    <div class="hero-left">
+  <section class="hero">
+    <div class="hero-left" data-aos="fade-right">
       <h1>Empowering SKs through Modern Web Solutions</h1>
       <p>SKroll Up is your partner in creating digital platforms that promote transparency and innovation.</p>
       <a href="#contact">Contact Us</a>
     </div>
-    <div class="hero-right">
-      <img src="SKroll Up - Transparent - Tag - Black.png" alt="SKroll Up Banner">
+    <div class="hero-right" data-aos="fade-left">
+      <img src="SKroll Up - Transparent - Tag - Black.png" alt="SKroll Up">
     </div>
   </section>
 
-  <section id="portfolio" class="section" data-aos="fade-up">
-    <h2>Our Portfolio</h2>
-    <div class="grid portfolio-gallery">
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x200" alt="Project 1">
-        <p>SK Barangay Website</p>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x200" alt="Project 2">
-        <p>Youth Hub System</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="section" data-aos="fade-up">
-    <h2>Client Testimonials</h2>
+  <section id="services" class="section" data-aos="fade-up">
+    <h2>What We Offer</h2>
     <div class="grid">
-      <div class="testimonial">
-        <p>"SKroll Up provided us a platform we never thought possible. Our community is more connected than ever."</p>
-        <strong>- SK Chair, Barangay Santolan</strong>
+      <div class="portfolio-item">
+        <i class="fas fa-laptop-code fa-2x" style="color: var(--red); margin-bottom: 1rem;"></i>
+        <h3>Custom Website Development</h3>
+        <p>We build tailored websites that reflect your community's identity and needs—from landing pages to full portals.</p>
       </div>
-      <div class="testimonial">
-        <p>"Professional, fast, and aligned with our goals. Highly recommend!"</p>
-        <strong>- SK Kagawad, Barangay San Miguel</strong>
+      <div class="portfolio-item">
+        <i class="fas fa-tools fa-2x" style="color: var(--red); margin-bottom: 1rem;"></i>
+        <h3>Website Maintenance</h3>
+        <p>Ongoing support and updates to keep your SK websites secure, up-to-date, and running smoothly.</p>
+      </div>
+      <div class="portfolio-item">
+        <i class="fas fa-comments fa-2x" style="color: var(--blue); margin-bottom: 1rem;"></i>
+        <h3>Consultation & Training</h3>
+        <p>We guide SK officials through the digital process with training sessions and planning consultations.</p>
       </div>
     </div>
   </section>
-
-  <section id="contact" class="section" data-aos="fade-up">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 SKroll Up. All rights reserved.</p>
-  </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('nav-active');
-    });
-
-    document.querySelector("form")?.addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Thank you for your message! We'll get back to you shortly.");
-      this.reset();
+    AOS.init({
+      duration: 1000,
+      once: true
     });
   </script>
 </body>
